@@ -1,0 +1,8 @@
+PORT = '3001'
+USER_NAME = 'postgres'
+HOST_NAME = 'localhost'
+DB_NAME = 'WompDB'
+DB_PASSWORD = 'senai'
+DB_DIALECT = 'postgres'
+PORT_NUMBER = '5432'
+JWT_SECRET = 'Wompitydewompersonwompr9r20-3ú043r4r094308q349894398y43twpe8rytw3qp49tyh3qw95tp94egt9y9834qt27969w4yrtgyuirewyt96rguihjixghdfu874yqo3tihuwiehfo92y735qyq3wh4ui'
