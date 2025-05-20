@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./index.css">
+		<title>Sillyer</title>
+	</head>
+	<body>
+		<nav id="main-nav">
+			<button id="nav-auth-btn" data-section="auth-page">
+				Login/Registro
+			</button>
+			<button id="nav-feed-btn" data-section="feed-page" disabled>
+				Feed
+			</button>
+			<button id="nav-profile-btn" data-section="profile-page" disabled>
+				Perfil
+			</button>
+		</nav>
+
+		<main>
+			<div id="auth-page" class="page-section">
+                <div class="section-container">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <input
+                            type="email"
+                            id="login-email"
+                            placeholder="Email"
+                            required
+                        />
+                        <input
+                            type="password"
+                            id="login-password"
+                            placeholder="Senha"
+                            required
+                        />
+                        <button type="submit">Entrar</button>
+                    </form>
+                </div>
+                <div class="section-container">
+                    <h2>Registro</h2>
+                    <form id="register-form">
+                        <input
+                            type="text"
+                            id="register-username"
+                            placeholder="Nome de usuário"
+                            required
+                        />
+                        <input
+                            type="email"
+                            id="register-email"
+                            placeholder="Email"
+                            required
+                        />
+                        <input
+                            type="password"
+                            id="register-password"
+                            placeholder="Senha"
+                            required
+                        />
+                        <button type="submit">Registrar</button>
+                    </form>
+                </div>
+			</div>
+
+			<div id="feed-page" class="page-section">
+                <div class="section-container">
+                    <h2>Criar Post</h2>
+                    <form id="post-form">
+                        <textarea
+                            id="post-content"
+                            maxlength="280"
+                            placeholder="O que está acontecendo?"
+                            required
+                        ></textarea>
+                        <button type="submit">Postar</button>
+                    </form>
+                </div>
+                <div class="section-container">
+                    <h2>Posts</h2>
+                    <div id="posts-container"></div>
+                </div>
+			</div>
+
+			<div id="profile-page" class="page-section">
+                <div class="section-container">
+                    <h2>Perfil</h2>
+                    <form id="profile-form" enctype="multipart/form-data">
+                        <input
+                            type="text"
+                            id="profile-username"
+                            placeholder="Nome de usuário"
+                        />
+                        <input
+                            type="email"
+                            id="profile-email"
+                            placeholder="Email"
+                        />
+                        <textarea
+                            id="profile-bio"
+                            placeholder="Biografia"
+                        ></textarea>
+                        <button type="submit">Atualizar Perfil</button>
+                    </form>
+                    <button id="logout-btn" class="styled-button" style="margin-top: 1rem; width: 100%;">Logout</button>
+                    <button id="delete-account-btn" class="styled-button" style="margin-top: 0.5rem; width: 100%;">
+                        Deletar Conta
+                    </button>
+                </div>
+			</div>
+		</main>
+
+		<script src="index.js"></script>
+	</body>
+</html>

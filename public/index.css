@@ -1,0 +1,239 @@
+:root {
+	--bg-primary: #101014;
+	--bg-secondary: #18181c;
+	--surface-primary: #1f1f23;
+	--text-primary: #e4e4e7;
+	--text-secondary: #a0a0a7;
+	--accent-primary: #6a5acd;
+	--accent-primary-hover: #7b68ee;
+	--accent-success: #28a745;
+	--accent-success-hover: #218838;
+	--border-primary: #303034;
+	--error-color: #e74c3c;
+	--error-color-hover: #c0392b;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	line-height: 1.6;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+nav {
+	background-color: var(--bg-secondary);
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	border-bottom: 1px solid var(--border-primary);
+	flex-wrap: wrap;
+}
+
+nav button {
+	background-color: transparent;
+	color: var(--text-primary);
+	border: 1px solid var(--accent-primary);
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover,
+nav button.active {
+	background-color: var(--accent-primary);
+	color: var(--text-primary);
+}
+
+nav button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+nav button:disabled:hover {
+	background-color: transparent;
+	color: var(--text-primary);
+}
+
+main {
+	flex-grow: 1;
+	padding: 1.5rem;
+	max-width: 800px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.page-section {
+	display: none;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+.page-section.active {
+	display: block;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+h2 {
+	color: var(--accent-primary);
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.section-container {
+	background-color: var(--surface-primary);
+	padding: 1.5rem;
+	border-radius: 8px;
+	margin-bottom: 2rem;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+	background-color: var(--bg-secondary);
+	color: var(--text-primary);
+	border: 1px solid var(--border-primary);
+	padding: 0.8rem;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+	color: var(--text-secondary);
+	opacity: 0.7;
+}
+
+input[type="file"] {
+	color: var(--text-secondary);
+	padding: 0.5rem 0;
+}
+input[type="file"]::file-selector-button {
+	background-color: var(--accent-primary);
+	color: var(--text-primary);
+	border: none;
+	padding: 0.6rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+input[type="file"]::file-selector-button:hover {
+	background-color: var(--accent-primary-hover);
+}
+
+textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+
+button[type="submit"],
+.styled-button {
+	background-color: var(--accent-primary);
+	color: var(--text-primary);
+	border: none;
+	padding: 0.8rem 1.5rem;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover,
+.styled-button:hover {
+	background-color: var(--accent-primary-hover);
+}
+
+#logout-btn {
+	background-color: var(--text-secondary);
+	color: var(--bg-primary);
+}
+#logout-btn:hover {
+	background-color: var(--text-secondary);
+	filter: brightness(0.85);
+}
+
+#delete-account-btn {
+	background-color: var(--error-color);
+}
+#delete-account-btn:hover {
+	background-color: var(--error-color-hover);
+}
+
+#posts-container .post {
+	background-color: var(--surface-primary);
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 5px;
+	border-left: 4px solid var(--accent-primary);
+}
+
+#posts-container .post strong {
+	color: var(--accent-primary);
+	display: block;
+	margin-bottom: 0.3rem;
+}
+
+#posts-container .post p {
+	margin-bottom: 0.5rem;
+	word-break: break-word;
+}
+
+#posts-container .post small {
+	color: var(--text-secondary);
+	font-size: 0.8em;
+}
+
+@media (max-width: 600px) {
+	nav {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	nav button {
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
+	nav button:last-child {
+		margin-bottom: 0;
+	}
+	main {
+		padding: 1rem;
+		width: 95%;
+	}
+	.section-container {
+		padding: 1rem;
+	}
+	#current-profile-picture {
+		max-width: 120px;
+		max-height: 120px;
+	}
+}
